@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title: Niannings
+subtitle: wlxm
+description: 蔚灵寻梦
 keywords:
-author: John Doe
-language: en
+author: niannings
+language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://niannings.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -39,7 +39,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false # 当前主题需要
   line_number: true
   auto_detect: false
   tab_replace:
@@ -54,7 +54,7 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: uncategorized
+default_category: 其他
 category_map:
 tag_map:
 
@@ -92,12 +92,24 @@ live2d:
   tagMode: false
   debug: false
   model:
-    use: live2d-widget-model-wanko
+    use: live2d-widget-model-shizuku
   display:
     position: right
-    width: 150
-    height: 300
+    width: 200
+    height: 400
   mobile:
     show: true
   react:
     opacity: 0.7
+  dialog:
+    # 开启对话框
+    enable: true
+    script:
+      # 每空闲 10 秒钟，显示一条一言
+      every idle 10s: $hitokoto$
+      # 当触摸到星星图案
+      hover .star: 星星在天上而你在我心里 (*/ω＼*)
+      # 当触摸到角色身体
+      tap body: 哎呀！别碰我！
+      # 当触摸到角色头部
+      tap face: 人家已经不是小孩子了！

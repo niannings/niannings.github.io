@@ -10,7 +10,7 @@ function: # 功能开关，可选值（true,false）
   pjax: false # Pjax 无刷新加载页面，暂时存在较大问题
   
 # 附加图标库 用于自定义字体 www.iconfont.cn 登录->创建项目->添加图标->获取链接
-iconlib: # //at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css
+iconlib: //at.alicdn.com/t/font_1453670_97u18syloqf.css
 
 cdn: # 这里可以修改站点使用的库的CDN
   mdui:
@@ -44,21 +44,24 @@ menu:
   回到首页: 
     - /
     - icon-home
-#  文章归档: 
-#    - /archives
-#    - icon-container
+  # 文章归档: 
+  #  - /archives
+  #  - icon-container
   关于博客:
-    - /about.html
+    - /about
     - icon-info-circle
+  技术主页:
+    - /home
+    - icon-code
   我的朋友: 
     - /PY.html
 
 widgets:
 - social
-- category
 - tagcloud
+- category
 - archive
-# - recent_posts
+- recent_posts
 
 maxTagcloud: 0  # 0 表示不限制
 
