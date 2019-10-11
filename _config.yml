@@ -78,7 +78,10 @@ theme: nexmoe
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/niannings/niannings.github.io.git #https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: master #published
+  message: deploy
 
 live2d:
   enable: true
@@ -98,10 +101,3 @@ live2d:
     show: true
   react:
     opacity: 0.7
-
-comment: gitment
-gitment:
-  owner: niannings # 持有该 repo 的 GitHub user
-  repo: niannings.github.io # 存放评论的 issue 所在的 repo
-  clientID: 49b2f73249ac1a6f3e42 # GitHub Client ID
-  clientSecret: a2df7d7d0cb7ebec3731363ae1f79d3aea7c6e0f # GitHub Client Secret
