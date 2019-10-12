@@ -31,6 +31,7 @@ $ cd <folder>
 $ npm install
 ```
 新建完成后，指定文件夹的目录如下：
+
 ```
 .
 ├── _config.yml
@@ -156,6 +157,7 @@ post_asset_folder: true
 Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。
 
 - 首先安装部署工具
+
 ```shell
 $ npm install hexo-deployer-git --save
 ```
@@ -171,6 +173,7 @@ deploy:
 ```
 
 - 发布
+
 ```shell
 $ hexo deploy
 ```
