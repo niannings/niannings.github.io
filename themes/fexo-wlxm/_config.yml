@@ -83,7 +83,7 @@ backtop:
 donation:
   show: true
   btn_text: 支持一下
-  tip: 扫一扫，支持forsigner
+  tip: 扫一扫，支持niannings
   items:
     - type: 微信
       text: 微信扫一扫
