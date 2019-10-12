@@ -144,9 +144,9 @@ gitalk:
   enable: true # 如果使用 gitalk，请设置改之为true
   clientID: 49b2f73249ac1a6f3e42
   clientSecret: a2df7d7d0cb7ebec3731363ae1f79d3aea7c6e0f
-  repo: blog-comment
-  owner: forsigner
-  admin: forsigner
+  repo: niannings.github.io
+  owner: niannings # 持有该 repo 的 GitHub username
+  admin: niannings # 持有该 repo 的 GitHub username
 
 
 # gitment comment service
