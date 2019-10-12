@@ -63,6 +63,11 @@ widgets:
 - archive
 - recent_posts
 
+toc:
+  enable: true
+  heading: h2, h3, h4
+  showToggleBtn: true # 是否显示切换TOC目录展开收缩的按钮
+
 maxTagcloud: 0  # 0 表示不限制
 
 social:

@@ -39,7 +39,7 @@ post_asset_folder: true # 开启文章资源文件夹
 relative_link: false
 future: true
 highlight:
-  enable: false # 当前主题需要
+  enable: true # 当前主题需要
   line_number: true
   auto_detect: false
   tab_replace:
@@ -52,7 +52,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: 其他
 category_map:
@@ -73,7 +73,14 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: nexmoe-wlxm
+# theme: nexmoe-wlxm
+# theme: matery
+theme: fexo-wlxm
+
+search:
+  path: search.json
+  source: all # other values: posts, pages
+  trim_html: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
