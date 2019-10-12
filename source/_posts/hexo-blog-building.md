@@ -14,16 +14,18 @@ date: 2019-10-12 10:41:28
   - Git
   - GitHub
 
+**如果不会yml文件，可以狠狠的[点这里](http://www.ruanyifeng.com/blog/2016/07/yaml.html)**
+
 ## 安装
 
-``` bash
+``` shell
 $ npm install -g hexo-cli
 $ # 或者
 $ yarn global add hexo-cli
 ```
 
 ## 初始化
-``` bash
+``` shell
 $ hexo init <folder>
 $ cd <folder>
 $ npm install
@@ -72,14 +74,14 @@ Hexo的模板是指在新建的文章文件中默认填充的内容。例如，�
 
 ## 草稿
 刚刚提到了 ```Hexo``` 的一种特殊布局：```draft```，这种布局在建立时会被保存到 ```source/_drafts``` 文件夹，您可通过 ```publish``` 命令将草稿移动到 ```source/_posts``` 文件夹，该命令的使用方式与 ```new``` 十分类似，您也可在命令中指定 ```layout``` 来指定布局。
-``` bash
+``` shell
 $ hexo publish [layout] <title>
 ```
 
 ## 模版（Scaffold）
 在新建文章时，```Hexo``` 会根据 ```scaffolds``` 文件夹内相对应的文件来建立文件，例如：
 
-``` bash
+``` shell
 $ hexo new photo "My Gallery" # photo是模版文件名称
 ```
 
@@ -92,12 +94,12 @@ date | 文件建立日期
 
 ## Cli
 新建页面（page）、文章（post）、草稿（draft）
-```bash
+```shell
 $ hexo new [layout] <title>
 ```
 
 # 开始写作
-``` bash
+``` shell
 $ hexo new post my-post # /source/_posts/my-post.md
 $ # 为了更好的归档可以像下面那样
 $ hexo new post :2019-:10-:12-:diary.md
@@ -149,3 +151,26 @@ tags:
 post_asset_folder: true
 ```
 当资源文件管理功能打开后，```Hexo```将会在你每一次通过 ```hexo new [layout] <title>``` 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。
+
+## 部署到GitHub
+Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。
+
+- 首先安装部署工具
+```shell
+$ npm install hexo-deployer-git --save
+```
+
+- 修改部署配置```_config.yml```
+
+```yaml
+deploy:
+  type: git
+  repo: <repository url> # 远程仓库地址
+  branch: [branch] # 要发布到哪个分支
+  message: [message] # commit message
+```
+
+- 发布
+```shell
+$ hexo deploy
+```
