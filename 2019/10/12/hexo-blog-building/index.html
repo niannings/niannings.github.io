@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Hexo+GitHub搭建静态博客教程 | Niannings</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Hexo," />
+  
+
+  <meta name="description" content="使用Hexo搭建静态博客  依赖： Nodejs Git GitHub    如果不会yml文件，可以狠狠的点这里 安装$ npm install -g hexo-cli$ # 或者$ yarn global add hexo-cli  初始化$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install 新建完成后，指定文件夹的目录如下： .">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Hexo+GitHub搭建静态博客教程">
+<meta property="og:url" content="https://niannings.github.io/2019/10/12/hexo-blog-building/index.html">
+<meta property="og:site_name" content="Niannings">
+<meta property="og:description" content="使用Hexo搭建静态博客  依赖： Nodejs Git GitHub    如果不会yml文件，可以狠狠的点这里 安装$ npm install -g hexo-cli$ # 或者$ yarn global add hexo-cli  初始化$ hexo init &lt;folder&gt;$ cd &lt;folder&gt;$ npm install 新建完成后，指定文件夹的目录如下： .">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://niannings.github.io/images/image.jpg">
+<meta property="article:published_time" content="2019-10-12T02:41:28.000Z">
+<meta property="article:modified_time" content="2020-10-11T10:55:10.212Z">
+<meta property="article:author" content="niannings">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://niannings.github.io/images/image.jpg">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+    
+<link rel="stylesheet" href="/css/personal-style.css">
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/categories/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tags/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/friends/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%EF%BC%88Layout%EF%BC%89"><span class="toc-text">布局（Layout）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="toc-text">文件名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%89%88%EF%BC%88Scaffold%EF%BC%89"><span class="toc-text">模版（Scaffold）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cli"><span class="toc-text">Cli</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%86%99%E4%BD%9C"><span class="toc-text">开始写作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A5%E4%B8%8B%E6%98%AF%E9%A2%84%E5%85%88%E5%AE%9A%E4%B9%89%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">以下是预先定义的参数:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%92%8C%E6%A0%87%E7%AD%BE"><span class="toc-text">分类和标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90"><span class="toc-text">静态资源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%91%E9%87%8F%E8%B5%84%E6%BA%90"><span class="toc-text">少量资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-text">文章资源文件夹</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="toc-text">部署到GitHub</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-hexo-blog-building" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">使用Hexo+GitHub搭建静态博客教程</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.10.12</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>niannings</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>使用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a>搭建静态博客</p>
+<ul>
+<li>依赖：<ul>
+<li>Nodejs</li>
+<li>Git</li>
+<li>GitHub</li>
+</ul>
+</li>
+</ul>
+<p><strong>如果不会yml文件，可以狠狠的<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2016/07/yaml.html">点这里</a></strong></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install -g hexo-cli</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="comment"># 或者</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> yarn global add hexo-cli</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo init &lt;folder&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> &lt;folder&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>_config.yml是网站的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置文件</a></p>
+</li>
+<li><p>scaffolds: 模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。<br>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold/post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+</li>
+<li><p>source<br>资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。</p>
+</li>
+<li><p>themes<br>主题 文件夹。Hexo 会根据主题来生成静态页面。</p>
+</li>
+</ul>
+<h2 id="布局（Layout）"><a href="#布局（Layout）" class="headerlink" title="布局（Layout）"></a>布局（Layout）</h2><table>
+<thead>
+<tr>
+<th>布局</th>
+<th>路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>post</td>
+<td>source/_posts</td>
+</tr>
+<tr>
+<td>page</td>
+<td>source</td>
+</tr>
+<tr>
+<td>draft</td>
+<td>source/_draft</td>
+</tr>
+</tbody></table>
+<h2 id="文件名称"><a href="#文件名称" class="headerlink" title="文件名称"></a>文件名称</h2><figure class="highlight plain"><figcaption><span>默认以标题做为文件名称，但您可编辑 ```new_post_name``` 参数来改变默认的文件名称，举例来说，设为 ```:year-:month-:day-:title.md``` 可让您更方便的通过日期来管理文章。</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">| 变量 |  描述 |</span><br><span class="line">|---|---|</span><br><span class="line">| :title | 标题（小写，空格将会被替换为短杠）|</span><br><span class="line">| :year | 建立的年份，比如， 2015 |</span><br><span class="line">| :month | 建立的月份（有前导零），比如， 04 |</span><br><span class="line">| :i_month | 建立的月份（无前导零），比如， 4 |</span><br><span class="line">| :day | 建立的日期（有前导零），比如， 07 |</span><br><span class="line">| :i_day | 建立的日期（无前导零），比如， 7 |</span><br><span class="line"></span><br><span class="line">## 草稿</span><br><span class="line"></span><br><span class="line">刚刚提到了 &#96;&#96;&#96;Hexo&#96;&#96;&#96; 的一种特殊布局：&#96;&#96;&#96;draft&#96;&#96;&#96;，这种布局在建立时会被保存到 &#96;&#96;&#96;source&#x2F;_drafts&#96;&#96;&#96; 文件夹，您可通过 &#96;&#96;&#96;publish&#96;&#96;&#96; 命令将草稿移动到 &#96;&#96;&#96;source&#x2F;_posts&#96;&#96;&#96; 文件夹，该命令的使用方式与 &#96;&#96;&#96;new&#96;&#96;&#96; 十分类似，您也可在命令中指定 &#96;&#96;&#96;layout&#96;&#96;&#96; 来指定布局。</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96; shell</span><br><span class="line">$ hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="模版（Scaffold）"><a href="#模版（Scaffold）" class="headerlink" title="模版（Scaffold）"></a>模版（Scaffold）</h2><p>在新建文章时，<code>Hexo</code> 会根据 <code>scaffolds</code> 文件夹内相对应的文件来建立文件，例如：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new photo <span class="string">&quot;My Gallery&quot;</span> <span class="comment"># photo是模版文件名称</span></span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>layout</td>
+<td>布局</td>
+</tr>
+<tr>
+<td>title</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>date</td>
+<td>文件建立日期</td>
+</tr>
+</tbody></table>
+<h2 id="Cli"><a href="#Cli" class="headerlink" title="Cli"></a>Cli</h2><p>新建页面（page）、文章（post）、草稿（draft）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new [layout] &lt;title&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a>开始写作</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new post my-post <span class="comment"># /source/_posts/my-post.md</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="comment"># 为了更好的归档可以像下面那样</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo new post :2019-:10-:12-:diary.md</span></span><br></pre></td></tr></table></figure>
+<p>生成的文件长这样：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&#x27;:2019-:10-:12-:diary.md&#x27;</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">Diary</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2019-10-12 11:25:29</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<p>两个三横线中间是什么呢？可以狠狠的<a target="_blank" rel="noopener" href="https://jekyllrb.com/docs/front-matter/">点这里</a></p>
+<h3 id="以下是预先定义的参数"><a href="#以下是预先定义的参数" class="headerlink" title="以下是预先定义的参数:"></a>以下是预先定义的参数:</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>layout</td>
+<td>布局</td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>标题</td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>建立日期</td>
+<td>文件建立日期</td>
+</tr>
+<tr>
+<td>updated</td>
+<td>更新日期</td>
+<td>文件更新日期</td>
+</tr>
+<tr>
+<td>comments</td>
+<td>开启文章的评论功能</td>
+<td>true</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>标签（不适用于分页）</td>
+<td></td>
+</tr>
+<tr>
+<td>categories</td>
+<td>分类（不适用于分页）</td>
+<td></td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>覆盖文章网址</td>
+<td></td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>仅用于 meta 标签和 Open Graph 的关键词（不推荐使用）</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">categories:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Diary</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">PS3</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Games</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h2><h3 id="少量资源"><a href="#少量资源" class="headerlink" title="少量资源"></a>少量资源</h3><p>图片、CSS、JS 文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 source/images 文件夹中。然后通过类似于 <img src="/images/image.jpg"> 的方法访问它们</p>
+<h3 id="文章资源文件夹"><a href="#文章资源文件夹" class="headerlink" title="文章资源文件夹"></a>文章资源文件夹</h3><p>可以通过将 config.yml 文件中的 post_asset_folder 选项设为 true 来打开。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>当资源文件管理功能打开后，<code>Hexo</code>将会在你每一次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。</p>
+<h2 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h2><p>Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。</p>
+<ul>
+<li>首先安装部署工具</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-deployer-git --save</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改部署配置<code>_config.yml</code></li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span> <span class="comment"># 远程仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> [<span class="string">branch</span>] <span class="comment"># 要发布到哪个分支</span></span><br><span class="line">  <span class="attr">message:</span> [<span class="string">message</span>] <span class="comment"># commit message</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>发布</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br></pre></td></tr></table></figure>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持niannings</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/qr-wechat.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/qr-alipay.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/10/11/react-hooks/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/10/12/2019-10-12-diary-md/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/categories/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tags/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/friends/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '49b2f73249ac1a6f3e42',
+  clientSecret: 'a2df7d7d0cb7ebec3731363ae1f79d3aea7c6e0f',
+  repo: 'niannings.github.io',
+  owner: 'niannings',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: md5(location.pathname),
+  admin: ['niannings'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7},"dialog":{"enable":true,"script":{"every idle 10s":"$hitokoto$","hover .star":"星星在天上而你在我心里 (*/ω＼*)","tap body":"哎呀！别碰我！","tap face":"人家已经不是小孩子了！"}},"log":false});</script></body>
+</html>
